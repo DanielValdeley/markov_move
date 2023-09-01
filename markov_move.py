@@ -10,9 +10,19 @@ def markov_move(A, s):
 
 A = np.array([ [0.3, 0.5, 0.2], [0.3, 0.4, 0.3], [0.2, 0.5, 0.3] ])
 
+
+
+
+runs = 1000000
 s = 0
-markov_move = []
-for i in range(1000):
+vet_cont = {}
+tam = A[0].size
+vet_cont = np.zeros(tam)
+for i in range(runs):
     s = markov_move(A,s)
-    vet_cont[s] += 1 // TODO ajustar logica
-    print(s)
+    vet_cont[s] += 1 
+
+for i in range(tam):
+    print(vet_cont[i]/runs)
+
+
